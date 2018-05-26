@@ -1,0 +1,9 @@
+label {width: 100%}
+.personPanel { background: url(images/male.jpg) no-repeat 0; background-size: cover; width: 242px;
+     height: 537px}
+.formPanel {border-bottom: 1px solid red; border-radius: 4px; box-shadow:0 0 5px #b1b1b1; 
+    padding: 25px; width: 300px}
+.wid100 { width: 100%; margin: 20px 0}
+.label { display: block; font-size: 14px; text-align: left; color: black;}
+.inputfield { padding: 5px; font-size: 12px; width: 100%}
+.btnSubmit {background:#c7222a; color: #fff; font-size:14px; padding: 10px 15px; border: 0 }
