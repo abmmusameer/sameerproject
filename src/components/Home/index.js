@@ -37,7 +37,13 @@ class Home extends Component {
                 errors["name"] = "Only letters";
             }            
         }
-
+        //
+        // if(!fields["personAge"]){
+        //     formIsValid = false;
+        //     errors["personAge"] = "Cannot be empty";
+        // }else{
+        //     if(!)
+        // }
          
 
         //Email
@@ -45,7 +51,8 @@ class Home extends Component {
             formIsValid = false;
             errors["email"] = "Cannot be empty";
         }
-
+        
+        debugger
         if (typeof fields["email"] !== "undefined") {
             let lastAtPos = fields["email"].lastIndexOf('@');
             let lastDotPos = fields["email"].lastIndexOf('.');
@@ -53,7 +60,7 @@ class Home extends Component {
             if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') === -1 && 
             lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
                 formIsValid = false;
-                errors["email"] = "Email is not valid";
+                errors["email"] = "Email is not";
             } 
         }
 
@@ -66,9 +73,9 @@ class Home extends Component {
     contactSubmit(e) {
         e.preventDefault();
         if (this.handleValidation()) {
-            alert("Form submitted");
+            // alert("Form submitted");
         } else {
-            alert("Form has errors.")
+            // alert("Form has errors.")
         }
 
     }
@@ -103,10 +110,10 @@ class Home extends Component {
                             <div className="wid100">
                             <label>
                                 <span className="label">Age</span>
-                                <input type="text" className="inputfield" ref="personAge" 
-                                value={this.state.fields["personAge"]}
-                                onChange={this.handleChange.bind(this, "personAge")}/>
-                                <span style={{ color: "red" }}>{this.state.errors["personAge"]}</span>
+                                        <input type="text" className="inputfield" ref="email" 
+                                            value={this.state.fields["email"]}
+                                            onChange={this.handleChange.bind(this, "email")}/>
+                                        <span style={{ color: "red" }}>{this.state.errors["email"]}</span>
                             </label>
                             </div>
                             <div className="wid100">
