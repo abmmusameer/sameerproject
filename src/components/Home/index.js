@@ -26,58 +26,57 @@ class Home extends Component {
 
         //debugger;
         //Name       
-        if (typeof fields["name"] === 'undefined') {
-            formIsValid = false;
-            errors["name"] = "Cannot be empty";
+        if (typeof fields["Name"] === 'undefined') {
+            formIsValid = false;            
+            errors["Name"] = "Cannot be empty";
+            
         }
         else
         {
-            if (!fields["name"].match(/^[a-zA-Z]+$/)) {
+            if (!fields["Name"].match(/^[a-zA-Z]+$/)) {
                 formIsValid = false;
-                errors["name"] = "Only letters";
+                errors["Name"] = "Only letters";            
             }            
         }
-        //
-        // if(!fields["personAge"]){
-        //     formIsValid = false;
-        //     errors["personAge"] = "Cannot be empty";
-        // }else{
-        //     if(!)
-        // }
-         
-
-        //Email
-        if (!fields["email"]) {
+        //personAge        
+        if (typeof fields["Age"] === "undefined"){
             formIsValid = false;
-            errors["email"] = "Cannot be empty";
-        }
-        
-        debugger
-        if (typeof fields["email"] !== "undefined") {
-            let lastAtPos = fields["email"].lastIndexOf('@');
-            let lastDotPos = fields["email"].lastIndexOf('.');
-
-            if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') === -1 && 
-            lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
+            errors["Age"] = "Cannot be empty";            
+        } else{           
+            if (!fields["Age"].match(/^[0-9]+$/)) {
                 formIsValid = false;
-                errors["email"] = "Email is not";
-            } 
+                errors["Age"] = "Only Numbers";
+            }
         }
 
+        //earningStatus
+        //debugger        
+        if (!fields["workingStatus"] === "undefined"){
+           formIsValid = false;
+            errors["workingStatus"] = "Select Earning status";
+       }
 
+        if (!fields["maritalStatus"]) {
+            formIsValid = false;
+            errors["maritalStatus"] = "Select Marital Status";
+        }
 
-        this.setState({ errors: errors });
+        if (!fields["location"]){
+            formIsValid = false;
+            errors["location"] = "Select location";
+        }
+
+    this.setState({ errors: errors });
         return formIsValid;
     }
 
     contactSubmit(e) {
         e.preventDefault();
-        if (this.handleValidation()) {
-            // alert("Form submitted");
+        if (this.handleValidation()) {            
+            alert("");
         } else {
-            // alert("Form has errors.")
-        }
-
+            alert("Form has errors.")
+        }        
     }
 
     handleChange(field, e) {
@@ -97,37 +96,37 @@ class Home extends Component {
                     <div className="maininnerWrap">
                         <div className="personPanel"></div>
                         <div className="formPanel">
-                        <form onSubmit={this.contactSubmit.bind(this)}>
+                        <form onSubmit={this.contactSubmit.bind(this)} id="form">
                            <div className="wid100">
                             <label>
                                 <span className="label">Name</span>
-                                        <input type="text" className="inputfield" ref="name" 
-                                        onChange={this.handleChange.bind(this, "name")} 
-                                        value={this.state.fields["name"]}/>
-                                        <span style={{ color: "red" }}>{this.state.errors["name"]}</span>
+                                        <input type="text" className="inputfield" ref="Name" 
+                                            onChange={this.handleChange.bind(this, "Name")} 
+                                            value={this.state.fields["Name"]}/>
+                                        <span style={{ color: "red" }}>{this.state.errors["Name"]}</span>
                             </label>
                             </div>
                             <div className="wid100">
                             <label>
                                 <span className="label">Age</span>
-                                        <input type="text" className="inputfield" ref="email" 
-                                            value={this.state.fields["email"]}
-                                            onChange={this.handleChange.bind(this, "email")}/>
-                                        <span style={{ color: "red" }}>{this.state.errors["email"]}</span>
+                                        <input type="text" className="inputfield" ref="Age" 
+                                            value={this.state.fields["Age"]}
+                                            onChange={this.handleChange.bind(this, "Age")}/>
+                                        <span style={{ color: "red" }}>{this.state.errors["Age"]}</span>
                             </label>
                             </div>
                             <div className="wid100">
                                 <label>
                                     <span className="label">Earning Status</span>                                                                        
-                                    <select ref="earningStatus" 
-                                    value={this.state.fields["earningStatus"]}
-                                    onChange={this.handleChange.bind(this, "earningStatus")} 
+                                        <select ref="workingStatus" 
+                                            value={this.state.fields["workingStatus"]}
+                                            onChange={this.handleChange.bind(this, "workingStatus")} 
                                     className="inputfield">
                                     <option value="Salaried">Salaried</option>
                                     <option value="Self employed">Self Employed</option>
                                     <option value="Not working">Not Working</option>
                                     </select>
-                                    <span style={{ color: "red" }}>{this.state.errors["earningStatus"]}</span>
+                                        <span style={{ color: "red" }}>{this.state.errors["workingStatus"]}</span>
                                 </label>
                             </div>
                             <div className="wid100">
