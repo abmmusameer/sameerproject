@@ -9,7 +9,6 @@ const controls = [
     { label: 'Cheese', type: 'cheese' },
     { label: 'Meat', type: 'meet' },
 ];
-
 const buildControls = (props) => (
     <div className={classes.BuildControls}>
         {controls.map(ctrl => (
