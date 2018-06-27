@@ -1,0 +1,4 @@
+/****global Css******/
+* {margin: 0px; padding: 0px; box-sizing: border-box;}
+
+.container { width:100%; max-width: 1300px; margin: 0 auto}
