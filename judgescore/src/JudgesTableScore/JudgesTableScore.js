@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
 
 import './JudgesTableScore.css';
 
@@ -10,53 +8,93 @@ class Judgetablescore extends Component{
 
         this.state = {
             selectedOption: '',
-            technique: 0,
-        }
+            synchronization: '',
+            technique: ''
+        };
+
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        
     }
-    
+
+
+    handleChange(event) {  
+        const target = event.target;
+        const value =  target.value;
+        const name = target.name;
+        this.setState({[name]: value});       
+    }
+
     //select option
-    handleChange = (selectedOption) => {
-        this.setState({ selectedOption });        
-        if (selectedOption) {
-            document.querySelector('.selectedTeamname').textContent = selectedOption.label;            
-        }
+    // handleSelectChange = (selectedOption) => {
+    //     this.setState({ selectedOption });        
+    //     if (selectedOption) {
+    //         document.querySelector('.selectedTeamname').textContent = selectedOption.label;            
+    //     }
+        
+    // }
+
+
+
+    handleFormSubmit(event) {
+
     }
+
+
     render(){
-        const { selectedOption } = this.state;
+        var selectoption = this.state.selectedOption;
+        var technique; 
+        var synchronization;
+    
+        var technicalPres;
+       
+        if (document.getElementById('technique') != null && document.getElementById('synchronization') != null) {          
+            technique = document.getElementById("technique").value;
+            synchronization = document.getElementById("synchronization").value;
+            technicalPres = technique + synchronization;
+        }
+    
         return(
             <section className="judgesTablePanel">
               <div className="container">
+         
                 <figure>
                     <div>Lauren</div>
                 </figure> 
                 <div className="team_select">
-                    <Select
-                        name="form-field-name"
-                        value={selectedOption}
-                        onChange={this.handleChange}
-                        options={[
-                            { value: 'one', label: 'One' },
-                            { value: 'two', label: 'Two' },
-                            { value: 'three', label: 'Three' },
-                        ]}
-                    />
-                    <p className="selectedTeamname">Team 1</p>
+                    <select
+                        name="selectedOption"
+                        value={this.state.selectedOption}
+                        onChange={this.handleChange}>
+                        <option value="Team Select">Team Select</option>
+                        <option value="one">One</option>
+                        <option value="two">two</option>
+                        <option value="three">three</option>
+                    </select>
+                    {selectoption}
                 </div>
-
                 <div className="categoryPanel">
                     <div className="row">
                         <div className="col-8">Technical Presentation</div>
                             <div className="col-4">
-                            <input type="text" 
-                            name="techPresentation" 
-                            id="techPresentation" 
-                            value={this.state.techPresentation} onChange={this.handlechange}/></div>
+                            {technicalPres}
+                             </div>
                             <ul>
                                 <li>
                                     <label>
                                         Technique
-                                        <input type="text" name="technique" id="technique" placeholder="0"
-                                        
+                                        <input type="text" name="technique" id="technique"
+                                         placeholder="0" value={this.state.technique}
+                                        onChange={this.handleChange.bind(this)}
+                                        />  
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        Synchronization
+                                        <input type="text" name="synchronization" id="synchronization" 
+                                        placeholder="0" value={this.state.synchronization}
+                                        onChange={this.handleChange.bind(this)}                                        
                                         />
                                     </label>
                                 </li>
@@ -113,6 +151,8 @@ class Judgetablescore extends Component{
             </section>
         );
     }
+
+    
 }
 
 export default Judgetablescore;
