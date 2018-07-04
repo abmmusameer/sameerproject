@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 import './JudgesTableScore.css';
 
@@ -19,8 +20,9 @@ class Judgetablescore extends Component{
              
         };
 
-        this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        
         
     }
 
@@ -34,25 +36,42 @@ class Judgetablescore extends Component{
 
 
     handleFormSubmit(event) {
+        event.preventDefault();
+        const judgecal = {
+            selectedOption : this.state.selectedOption,
+            technique : this.state.technique,
+            synchronization : this.state.synchronization,
+            execution : this.state.execution,
+            formations : this.state.formations,
+            presentation : this.state.presentation,
+            choreography : this.state.choreography,
+            musicinterpretation : this.state.musicinterpretation,
+            appearance : this.state.appearance,
+        }
 
+        axios.post('https://jsonplaceholder.typicode.com/user', {judgecal})
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+            })
     }
 
 
     render(){
-        var selectoption = this.state.selectedOption;
-        var technique = document.getElementById('technique');
-        var synchronization = document.getElementById('synchronization');
-        var execution = document.getElementById('execution');
-        var formations = document.getElementById('formations');
+        let selectoption = this.state.selectedOption;
+        let technique = document.getElementById('technique');
+        let synchronization = document.getElementById('synchronization');
+        let execution = document.getElementById('execution');
+        let formations = document.getElementById('formations');
 
-        var presentation = document.getElementById('presentation');
-        var choreography = document.getElementById('choreography');
-        var musicinterpretation = document.getElementById('musicinterpretation');
-        var appearance = document.getElementById('appearance');        
+        let presentation = document.getElementById('presentation');
+        let choreography = document.getElementById('choreography');
+        let musicinterpretation = document.getElementById('musicinterpretation');
+        let appearance = document.getElementById('appearance');        
 
 
-        var technicalPres = 0;
-        var artisticPres = 0;
+        let technicalPres = 0;
+        let artisticPres = 0;
 
         
        
