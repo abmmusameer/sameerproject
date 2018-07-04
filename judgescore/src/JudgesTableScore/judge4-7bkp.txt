@@ -8,7 +8,7 @@ class Judgetablescore extends Component{
         super(props);
 
         this.state = {
-            selectTeam: '',
+            selectedOption: '',
             technique: '',
             synchronization: '',
             execution: '',
@@ -17,8 +17,8 @@ class Judgetablescore extends Component{
             choreography: '',  
             musicinterpretation: '',  
             appearance: '',
-            technicalPres: '',
-            artisticPres: ''           
+            technicalPres: 0,
+            artisticPres: 0            
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -38,56 +38,62 @@ class Judgetablescore extends Component{
 
     handleFormSubmit(event) {
         event.preventDefault();
-        let selectTeam = this.state.selectTeam;
-        let technique = this.state.technique;
-        let synchronization = this.state.synchronization;
-        let execution = this.state.execution;
-        let formations = this.state.formations;
+        const judgecal = {
+            selectedOption : this.state.selectedOption,
+            technique : this.state.technique,
+            synchronization : this.state.synchronization,
+            execution : this.state.execution,
+            formations : this.state.formations,
+            presentation : this.state.presentation,
+            choreography : this.state.choreography,
+            musicinterpretation : this.state.musicinterpretation,
+            appearance : this.state.appearance,
+           
+        }
 
-        let presentation = this.state.presentation;
-        let choreography = this.state.choreography;
-        let musicinterpretation = this.state.musicinterpretation;
-        let appearance = this.state.appearance;  
-        
-        let technicalPres = +technique + +synchronization + +execution + +formations;
-         
-        let artisticPres = +presentation + +choreography + +musicinterpretation + +appearance;
-    
-        let totalScore = +technicalPres + +artisticPres;
-
-        const judgecal = this;
-
-        axios.post('https://jsonplaceholder.typicode.com/users', {
-            selectTeam : selectTeam,
-            technique : technique,
-            synchronization : synchronization,
-            execution : execution,
-            formations : formations,
-            presentation : presentation,
-            choreography : choreography,
-            musicinterpretation : musicinterpretation,
-            appearance : appearance, 
-            technicalPres: technicalPres,
-            artisticPres: artisticPres,
-            totalScore : totalScore
-        })            
-            .then(res => {                
+        axios.post('https://jsonplaceholder.typicode.com/users', {judgecal})
+            .then(res => {
                 console.log(res);
-                judgecal.setState({selectTeam: '', technique: '', synchronization: '',
-                execution: '', formations: '', presentation: '', choreography: '', musicinterpretation: '',
-                appearance: '',technicalPres: '', artisticPres:'', totalScore
-                });
+                console.log(res.data);
             })
     }
 
 
     render(){
-        const selectTeamName = this.state.selectTeam;
-        const technicalPres = +this.state.technique + +this.state.synchronization + +this.state.execution 
-                            + +this.state.formations;
-        const artisticPres = +this.state.presentation + +this.state.choreography + +this.state.musicinterpretation
-                            + +this.state.appearance;
-        const totalScore = technicalPres + artisticPres;
+        let selectoption = this.state.selectedOption;
+        let technique = document.getElementById('technique');
+        let synchronization = document.getElementById('synchronization');
+        let execution = document.getElementById('execution');
+        let formations = document.getElementById('formations');
+
+        let presentation = document.getElementById('presentation');
+        let choreography = document.getElementById('choreography');
+        let musicinterpretation = document.getElementById('musicinterpretation');
+        let appearance = document.getElementById('appearance');        
+
+
+        let technicalPres = 0;
+        let artisticPres = 0;
+
+        
+       
+        if (technique != null && synchronization != null && execution != null && formations != null ) {          
+            technique = document.getElementById("technique").value;
+            synchronization = document.getElementById("synchronization").value;
+            execution = document.getElementById("execution").value;
+            formations = document.getElementById("formations").value;          
+        }
+        technicalPres = +technique + +synchronization + +execution + +formations
+
+        if (presentation != null && choreography != null && musicinterpretation != null && appearance != null) {
+            presentation = document.getElementById("presentation").value;
+            choreography = document.getElementById("choreography").value;
+            musicinterpretation = document.getElementById("musicinterpretation").value;
+            appearance = document.getElementById("appearance").value;
+        }
+        artisticPres = +presentation + +choreography + +musicinterpretation + +appearance;
+    
+        var totalScore = +technicalPres + +artisticPres;
 
         return(
             <section className="judgesTablePanel">
@@ -98,16 +104,15 @@ class Judgetablescore extends Component{
                     </figure> 
                     <div className="team_select">
                         <select
-                            name="selectTeam"
-                            value={this.state.selectTeam}
-                            id="selectTeam"
+                            name="selectedOption"
+                            value={this.state.selectedOption}
                             onChange={this.handleChange}>
                             <option value="Team Select">Team Select</option>
                             <option value="one">One</option>
                             <option value="two">two</option>
                             <option value="three">three</option>
                         </select>
-                     <input type="text" name="selectoption" id="selectoption" value={selectTeamName} />
+                        {selectoption}
                     </div>
                     <div className="categoryPanel">
                         <div className="row">
@@ -205,7 +210,7 @@ class Judgetablescore extends Component{
                         <div className="totalScoreField">
                             <label>
                                 Total Score
-                                <input type="text" name="totalScore" value={totalScore}/>
+                                {totalScore}
                             </label>
                         </div>
                     </div>
