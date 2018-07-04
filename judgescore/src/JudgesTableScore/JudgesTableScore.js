@@ -37,6 +37,7 @@ class Judgetablescore extends Component{
 
     handleFormSubmit(event) {
         event.preventDefault();
+<<<<<<< HEAD
         const judgecal = {
             selectedOption : this.state.selectedOption,
             technique : this.state.technique,
@@ -63,6 +64,37 @@ class Judgetablescore extends Component{
         let synchronization = document.getElementById('synchronization');
         let execution = document.getElementById('execution');
         let formations = document.getElementById('formations');
+=======
+
+        const judgecalculate = {
+            selectedOption: this.state.selectedOption,
+            technique: this.state.technique,
+            synchronization: this.state.synchronization,
+            execution: this.state.execution,
+            formations: this.state.formations,
+            presentation: this.state.presentation,
+            choreography: this.state.choreography,
+            musicinterpretation: this.state.musicinterpretation,
+            appearance: this.state.appearance
+        };
+
+        
+        axios.post('https://jsonplaceholder.typicode.com/users', { judgecalculate })
+        .then(res => {
+            console.log(res);
+            console.log(res.data);
+        });
+        
+    }
+    
+    
+    render(){        
+        var selectoption = this.state.selectedOption;
+        var technique = document.getElementById('technique');
+        var synchronization = document.getElementById('synchronization');
+        var execution = document.getElementById('execution');
+        var formations = document.getElementById('formations');
+>>>>>>> 1b7a01705e2372528e0666e93084133c35a1f5d1
 
         let presentation = document.getElementById('presentation');
         let choreography = document.getElementById('choreography');
@@ -96,127 +128,126 @@ class Judgetablescore extends Component{
         return(
             <section className="judgesTablePanel">
               <div className="container">
-         
-                <figure>
-                    <div>Lauren</div>
-                </figure> 
-                <div className="team_select">
-                    <select
-                        name="selectedOption"
-                        value={this.state.selectedOption}
-                        onChange={this.handleChange}>
-                        <option value="Team Select">Team Select</option>
-                        <option value="one">One</option>
-                        <option value="two">two</option>
-                        <option value="three">three</option>
-                    </select>
-                    {selectoption}
-                </div>
-                <div className="categoryPanel">
-                    <div className="row">
-                        <div className="col-8">Technical Presentation</div>
-                            <div className="col-4">
-                            {technicalPres}
-                             </div>
+                <form onSubmit={this.handleFormSubmit}>
+                    <figure>
+                        <div>Lauren</div>
+                    </figure> 
+                    <div className="team_select">
+                        <select
+                            name="selectedOption"
+                            value={this.state.selectedOption}
+                            onChange={this.handleChange}>
+                            <option value="Team Select">Team Select</option>
+                            <option value="one">One</option>
+                            <option value="two">two</option>
+                            <option value="three">three</option>
+                        </select>
+                        {selectoption}
+                    </div>
+                    <div className="categoryPanel">
+                        <div className="row">
+                            <div className="col-8">Technical Presentation</div>
+                                <div className="col-4">
+                                {technicalPres}
+                                </div>
+                                <ul>
+                                    <li>
+                                        <label>
+                                            Technique
+                                            <input type="text" name="technique" id="technique"
+                                            placeholder="0" value={this.state.technique}
+                                            onChange={this.handleChange}
+                                            />  
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            Synchronization
+                                            <input type="text" name="synchronization" id="synchronization" 
+                                            placeholder="0" value={this.state.synchronization}
+                                            onChange={this.handleChange}                                        
+                                            />
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            Execution
+                                            <input type="text" name="execution" id="execution"
+                                                placeholder="0" value={this.state.execution}
+                                                onChange={this.handleChange}
+                                            />
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            Formations
+                                            <input type="text" name="formations" id="formations"
+                                                placeholder="0" value={this.state.formations}
+                                                onChange={this.handleChange}
+                                            />
+                                        </label>
+                                    </li>
+                                </ul>
+                        </div>
+
+                        <div className="row">
+                            <div className="col-8">Artistic Presentation</div>
+                            <div className="col-4">                        
+                                {artisticPres}
+                            </div>
                             <ul>
                                 <li>
                                     <label>
-                                        Technique
-                                        <input type="text" name="technique" id="technique"
-                                         placeholder="0" value={this.state.technique}
-                                        onChange={this.handleChange.bind(this)}
-                                        />  
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        Synchronization
-                                        <input type="text" name="synchronization" id="synchronization" 
-                                        placeholder="0" value={this.state.synchronization}
-                                        onChange={this.handleChange.bind(this)}                                        
+                                        Presentation
+                                        <input type="text" name="presentation" id="presentation"
+                                            placeholder="0" value={this.state.presentation}
+                                            onChange={this.handleChange}
                                         />
                                     </label>
                                 </li>
                                 <li>
                                     <label>
-                                        Execution
-                                        <input type="text" name="execution" id="execution"
-                                            placeholder="0" value={this.state.execution}
-                                            onChange={this.handleChange.bind(this)}
+                                        Choreography
+                                        <input type="text" name="choreography" id="choreography"
+                                            placeholder="0" value={this.state.choreography}
+                                            onChange={this.handleChange}
                                         />
                                     </label>
                                 </li>
                                 <li>
                                     <label>
-                                        Formations
-                                        <input type="text" name="formations" id="formations"
-                                            placeholder="0" value={this.state.formations}
-                                            onChange={this.handleChange.bind(this)}
+                                        Music Interpretation
+                                        <input type="text" name="musicinterpretation" id="musicinterpretation"
+                                            placeholder="0" value={this.state.musicinterpretation}
+                                            onChange={this.handleChange}
+                                        />
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        Appearance
+                                        <input type="text" name="appearance" id="appearance"
+                                            placeholder="0" value={this.state.appearance}
+                                            onChange={this.handleChange}
                                         />
                                     </label>
                                 </li>
                             </ul>
-                    </div>
-
-                    <div className="row">
-                        <div className="col-8">Artistic Presentation</div>
-                        <div className="col-4">                        
-                            {artisticPres}
                         </div>
-                        <ul>
-                            <li>
-                                <label>
-                                    Presentation
-                                    <input type="text" name="presentation" id="presentation"
-                                        placeholder="0" value={this.state.presentation}
-                                        onChange={this.handleChange.bind(this)}
-                                    />
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    Choreography
-                                    <input type="text" name="choreography" id="choreography"
-                                        placeholder="0" value={this.state.choreography}
-                                        onChange={this.handleChange.bind(this)}
-                                    />
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    Music Interpretation
-                                    <input type="text" name="musicinterpretation" id="musicinterpretation"
-                                        placeholder="0" value={this.state.musicinterpretation}
-                                        onChange={this.handleChange.bind(this)}
-                                    />
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    Appearance
-                                    <input type="text" name="appearance" id="appearance"
-                                        placeholder="0" value={this.state.appearance}
-                                        onChange={this.handleChange.bind(this)}
-                                    />
-                                </label>
-                            </li>
-                        </ul>
+                        
                     </div>
-                    
-                </div>
-
-                <div className="totalScorepanel">
-                    <div className="totalScoreField">
-                        <label>
-                            Total Score
-                            {totalScore}
-                        </label>
+                    <div className="totalScorepanel">
+                        <div className="totalScoreField">
+                            <label>
+                                Total Score
+                                {totalScore}
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <button type="button">
-                    Submit Score
-                </button>
-
+                    <button type="submit">
+                        Submit Score
+                    </button>
+                </form>
               </div>
 
             </section>
