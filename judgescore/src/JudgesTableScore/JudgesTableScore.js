@@ -49,11 +49,11 @@ class Judgetablescore extends Component{
         let musicinterpretation = this.state.musicinterpretation;
         let appearance = this.state.appearance;  
         
-        let technicalPres = +technique + +synchronization + +execution + +formations;
+        let technicalPres = 0;
          
-        let artisticPres = +presentation + +choreography + +musicinterpretation + +appearance;
+        let artisticPres = 0;
     
-        let totalScore = +technicalPres + +artisticPres;
+        let totalScore = 0;
 
         const judgecal = this;
 
@@ -75,7 +75,7 @@ class Judgetablescore extends Component{
                 console.log(res);
                 judgecal.setState({selectTeam: '', technique: '', synchronization: '',
                 execution: '', formations: '', presentation: '', choreography: '', musicinterpretation: '',
-                appearance: '',technicalPres: '', artisticPres:'', totalScore
+                appearance: '',technicalPres: '', artisticPres:'', totalScore: '',
                 });
             })
     }
