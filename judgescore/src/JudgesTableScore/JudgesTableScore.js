@@ -57,7 +57,7 @@ class Judgetablescore extends Component{
 
         const judgecal = this;
 
-        axios.post('https://jsonplaceholder.typicode.com/users', {
+        axios.post('https://danceusadance.us/test/live_voting/saveScore', {
             selectTeam : selectTeam,
             technique : technique,
             synchronization : synchronization,

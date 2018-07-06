@@ -19,8 +19,8 @@ class judgeScore extends Component {
 
     render(){
         return(
-            <div>
-                {this.state.persons.map(person => <li key={person.id}>{person.username}</li>)}
+            <div>            
+                {this.state.persons.map(person => <li key={person.id}>{person.name}</li>)}
             </div>
         );
     };
