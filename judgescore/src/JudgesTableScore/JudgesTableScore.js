@@ -7,7 +7,7 @@ class Judgetablescore extends Component{
     constructor(props){
         super(props);
 
-        this.state = {            
+        this.state = {                    
             selectTeam: '',
             technique: '',
             synchronization: '',
@@ -79,7 +79,10 @@ class Judgetablescore extends Component{
                 execution: '', formations: '', presentation: '', choreography: '', musicinterpretation: '',
                 appearance: '',technicalPres: '', artisticPres:'', totalScore: '',
                 });
+                window.location.reload();
             })
+
+            
     }
 
 

@@ -5,7 +5,8 @@ class judgeScore extends Component {
     constructor(props){
         super(props);
         this.state = {
-            persons: []
+            persons: [],
+            teamId: ''
         } 
     }
 
@@ -13,8 +14,17 @@ class judgeScore extends Component {
         axios.get('https://danceusadance.us/test/live_voting/getScore')
             .then(res => {                                
                 const persons = res.data.score;
-                console.log(res);
-                this.setState({ persons });
+                if(res.data.status === 1){
+                    axios.post('https://danceusadance.us/test/live_voting/showOnTableScreen', {
+                        teamId: res.data.teamId             
+                     })            
+                        .then(res => {                
+                            console.log(res);
+                            
+                        })                      
+                    this.setState({ persons });               
+                    
+                }                
             })
     }
 
