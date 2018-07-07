@@ -7,7 +7,7 @@ class Judgetablescore extends Component{
     constructor(props){
         super(props);
 
-        this.state = {
+        this.state = {            
             selectTeam: '',
             technique: '',
             synchronization: '',
@@ -37,7 +37,8 @@ class Judgetablescore extends Component{
 
 
     handleFormSubmit(event) {
-        event.preventDefault();
+        event.preventDefault();        
+        let judge_name = this.state.judge_name;
         let selectTeam = this.state.selectTeam;
         let technique = this.state.technique;
         let synchronization = this.state.synchronization;
@@ -47,7 +48,7 @@ class Judgetablescore extends Component{
         let presentation = this.state.presentation;
         let choreography = this.state.choreography;
         let musicinterpretation = this.state.musicinterpretation;
-        let appearance = this.state.appearance;  
+        let appearance = this.state.appearance; 
         
         let technicalPres = 0;
          
@@ -58,6 +59,7 @@ class Judgetablescore extends Component{
         const judgecal = this;
 
         axios.post('https://danceusadance.us/test/live_voting/saveScore', {
+            judge_name: "judge_name",
             selectTeam : selectTeam,
             technique : technique,
             synchronization : synchronization,
@@ -73,7 +75,7 @@ class Judgetablescore extends Component{
         })            
             .then(res => {                
                 console.log(res);
-                judgecal.setState({selectTeam: '', technique: '', synchronization: '',
+                judgecal.setState({judge_name: '', selectTeam: '', technique: '', synchronization: '',
                 execution: '', formations: '', presentation: '', choreography: '', musicinterpretation: '',
                 appearance: '',technicalPres: '', artisticPres:'', totalScore: '',
                 });

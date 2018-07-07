@@ -10,9 +10,10 @@ class judgeScore extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com/users')
-            .then(res => {
-                const persons = res.data;
+        axios.get('https://danceusadance.us/test/live_voting/getScore')
+            .then(res => {                                
+                const persons = res.data.score;
+                console.log(res);
                 this.setState({ persons });
             })
     }
@@ -20,7 +21,7 @@ class judgeScore extends Component {
     render(){
         return(
             <div>            
-                {this.state.persons.map(person => <li key={person.id}>{person.name}</li>)}
+                {this.state.persons.map(person => <li key={person.judgeName}>{person.totalScore}</li>)}
             </div>
         );
     };
