@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import './JudgesTableScore.css';
 
-class Judgetablescore extends Component{
+class JudgesTableScore extends Component{
     constructor(props){
         super(props);
 
@@ -77,7 +77,7 @@ class Judgetablescore extends Component{
                 execution: '', formations: '', presentation: '', choreography: '', musicinterpretation: '',
                 appearance: '',technicalPres: '', artisticPres:'', totalScore: '',
                 });
-                window.location.reload();
+                // window.location.reload();
             })
 
             
@@ -225,4 +225,4 @@ class Judgetablescore extends Component{
     
 }
 
-export default Judgetablescore;
+export default JudgesTableScore;
