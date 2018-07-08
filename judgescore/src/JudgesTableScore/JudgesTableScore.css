@@ -1,1 +1,26 @@
-.judgesTablePanel { background: #ccc}
+.judgesTablePanel { background: #fff; font-size: 16px}
+.inputField {     border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 14px;
+    padding: 6px 10px;
+    color: #6f6f6f;}
+
+.btnGroup { text-align: center}
+.submitBtn {    background: #ff0052;
+    padding: 11px 21px;
+    text-align: center;
+    border: 0;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px; cursor: pointer;}
+
+.maincategoryCalc, .totalCalc { text-align: center; font-size: 18px; margin-bottom: 30px}
+
+.categoryPanel .row { margin: 25px 0 35px; display: inline-block}
+.categoryList li { width: 25%; display: inline-block}
+.categoryList li label { line-height: 30px}
+
+.totalScoreField { text-align: center;}
+.teamSelect { text-align: center;}
+select.inputField { margin-bottom: 6px; }
+.teamName.inputField { font-size: 25px; border: 0; text-align: center}

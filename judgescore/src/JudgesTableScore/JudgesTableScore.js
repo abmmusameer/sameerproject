@@ -96,33 +96,37 @@ class JudgesTableScore extends Component{
             <section className="judgesTablePanel">
               <div className="container">
                 <form onSubmit={this.handleFormSubmit}>
-                    <figure>
+                    {/* <figure>
                         <div>Lauren</div>
-                    </figure> 
-                    <div className="team_select">
+                    </figure>  */}
+                    <div className="teamSelect">                    
                         <select
+                            className="inputField"
                             name="selectTeam"
                             value={this.state.selectTeam}
                             id="selectTeam"
                             onChange={this.handleChange}>
-                            <option value="Team Select">Team Select</option>
+                            <option value="Team Select">Select Team</option>
                             <option value="one">One</option>
                             <option value="two">two</option>
                             <option value="three">three</option>
                         </select>
-                     <input type="text" name="selectoption" id="selectoption" value={selectTeamName} />
+                        <br/>
+                     <input type="text" className="inputField teamName" name="selectoption" id="selectoption" value={selectTeamName} />
                     </div>
                     <div className="categoryPanel">
                         <div className="row">
+                        <div className="maincategoryCalc">
                             <div className="col-8">Technical Presentation</div>
-                                <div className="col-4">
+                            <div className="col-4">
                                 {technicalPres}
-                                </div>
-                                <ul>
+                            </div>
+                        </div>
+                                <ul className="categoryList">
                                     <li>
                                         <label>
                                             Technique
-                                            <input type="text" name="technique" id="technique"
+                                            <input type="text" className="inputField" name="technique" id="technique"
                                             placeholder="0" value={this.state.technique}
                                             onChange={this.handleChange}
                                             />  
@@ -131,7 +135,7 @@ class JudgesTableScore extends Component{
                                     <li>
                                         <label>
                                             Synchronization
-                                            <input type="text" name="synchronization" id="synchronization" 
+                                            <input type="text" className="inputField" name="synchronization" id="synchronization" 
                                             placeholder="0" value={this.state.synchronization}
                                             onChange={this.handleChange}                                        
                                             />
@@ -140,7 +144,7 @@ class JudgesTableScore extends Component{
                                     <li>
                                         <label>
                                             Execution
-                                            <input type="text" name="execution" id="execution"
+                                            <input type="text" className="inputField" name="execution" id="execution"
                                                 placeholder="0" value={this.state.execution}
                                                 onChange={this.handleChange}
                                             />
@@ -149,7 +153,7 @@ class JudgesTableScore extends Component{
                                     <li>
                                         <label>
                                             Formations
-                                            <input type="text" name="formations" id="formations"
+                                            <input type="text" className="inputField" name="formations" id="formations"
                                                 placeholder="0" value={this.state.formations}
                                                 onChange={this.handleChange}
                                             />
@@ -159,15 +163,17 @@ class JudgesTableScore extends Component{
                         </div>
 
                         <div className="row">
+                        <div className="maincategoryCalc">
                             <div className="col-8">Artistic Presentation</div>
                             <div className="col-4">                        
                                 {artisticPres}
                             </div>
-                            <ul>
+                        </div>
+                            <ul className="categoryList">
                                 <li>
                                     <label>
                                         Presentation
-                                        <input type="text" name="presentation" id="presentation"
+                                        <input type="text" className="inputField" name="presentation" id="presentation"
                                             placeholder="0" value={this.state.presentation}
                                             onChange={this.handleChange}
                                         />
@@ -176,7 +182,7 @@ class JudgesTableScore extends Component{
                                 <li>
                                     <label>
                                         Choreography
-                                        <input type="text" name="choreography" id="choreography"
+                                        <input type="text" className="inputField" name="choreography" id="choreography"
                                             placeholder="0" value={this.state.choreography}
                                             onChange={this.handleChange}
                                         />
@@ -185,7 +191,7 @@ class JudgesTableScore extends Component{
                                 <li>
                                     <label>
                                         Music Interpretation
-                                        <input type="text" name="musicinterpretation" id="musicinterpretation"
+                                        <input type="text" className="inputField" name="musicinterpretation" id="musicinterpretation"
                                             placeholder="0" value={this.state.musicinterpretation}
                                             onChange={this.handleChange}
                                         />
@@ -194,7 +200,7 @@ class JudgesTableScore extends Component{
                                 <li>
                                     <label>
                                         Appearance
-                                        <input type="text" name="appearance" id="appearance"
+                                        <input type="text" className="inputField" name="appearance" id="appearance"
                                             placeholder="0" value={this.state.appearance}
                                             onChange={this.handleChange}
                                         />
@@ -205,16 +211,21 @@ class JudgesTableScore extends Component{
                         
                     </div>
                     <div className="totalScorepanel">
-                        <div className="totalScoreField">
-                            <label>
-                                Total Score
-                                <input type="text" name="totalScore" value={totalScore}/>
+                        <div className="totalCalc">
+                            <div className="col-8">Total Score</div>
+                            <div className="col-4">                        
+                                {totalScore}
+                            </div>
+                            <label>                             
+                                {/* <input type="text" className="inputField" name="totalScore" value={totalScore}/> */}
                             </label>
                         </div>
                     </div>
-                    <button type="submit">
-                        Submit Score
-                    </button>
+                    <div className="btnGroup">
+                        <button type="submit" className="submitBtn">
+                            Submit Score
+                        </button>
+                    </div>
                 </form>
               </div>
 
