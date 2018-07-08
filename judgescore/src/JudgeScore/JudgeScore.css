@@ -1,0 +1,5 @@
+.judgeScorepanel li { display: inline-block;
+    font-size: 143px;
+    padding: 0 6%;
+    color: #9c0057;}
+.judgeScorewrap { text-align: center; padding: 100px 0}

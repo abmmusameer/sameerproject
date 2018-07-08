@@ -5,7 +5,8 @@ class Lauren extends Component {
     render(){
         return(
             <div className="">
-                Lauren
+               <input type="hidden" value="Lauren" id="judgeName"/>
+               Lauren
                 <JudgesTableScore/>
             </div>
         )

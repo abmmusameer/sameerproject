@@ -7,7 +7,8 @@ class JudgesTableScore extends Component{
     constructor(props){
         super(props);
 
-        this.state = {                    
+        this.state = { 
+            judgeName: '',                   
             selectTeam: '',
             technique: '',
             synchronization: '',
@@ -38,6 +39,7 @@ class JudgesTableScore extends Component{
 
     handleFormSubmit(event) {
         event.preventDefault();         
+        let judgeName = document.getElementById('judgeName').value;
         let selectTeam = this.state.selectTeam;
         let technique = this.state.technique;
         let synchronization = this.state.synchronization;
@@ -57,7 +59,8 @@ class JudgesTableScore extends Component{
 
         const judgecal = this;
 
-        axios.post('https://danceusadance.us/test/live_voting/saveScore', { 
+        axios.post('https://danceusadance.us/test/live_voting/saveScore', {
+            judgeName : judgeName,
             selectTeam : selectTeam,
             technique : technique,
             synchronization : synchronization,
@@ -77,7 +80,8 @@ class JudgesTableScore extends Component{
                 execution: '', formations: '', presentation: '', choreography: '', musicinterpretation: '',
                 appearance: '',technicalPres: '', artisticPres:'', totalScore: '',
                 });
-                // window.location.reload();
+                //window.location.reload();
+                // window.location.href= "http://localhost:3000/JudgeScore";
             })
 
             
@@ -107,12 +111,36 @@ class JudgesTableScore extends Component{
                             id="selectTeam"
                             onChange={this.handleChange}>
                             <option value="Team Select">Select Team</option>
-                            <option value="one">One</option>
-                            <option value="two">two</option>
-                            <option value="three">three</option>
+                            <option value="1">DIVERSIONS</option>
+                            <option value="2">NAVATMAN</option>
+                            <option value="3">GURUS OF DANCE (JR)</option>
+                            <option value="4">GROUND ZERO</option>
+                            <option value="5">KRIYAA DANCE ACADEMY</option>
+                            <option value="6">KRUTI DANCE ACADEMY</option>
+                            <option value="7">NACH NATION</option>
+                            <option value="8">AARAT</option>
+                            <option value="9">PCIPA ROCKSTARS</option>
+                            <option value="10">KARMA</option>
+                            <option value="11">THE MOD PROJECT</option>
+                            <option value="12">JULES PERFORMING ARTS</option>
+                            <option value="13">SDFA JUNOON</option>
+                            <option value="14">SAAZISH</option>
+                            <option value="15">ARYA SENIOR</option>
+                            <option value="16">WARRIOR SWAG</option>
+                            <option value="17">NYC DANCE ARTS</option>
+                            <option value="18">NITESHA KAUTHUVAM</option>
+                            <option value="19">GURUS OF DANCE (SR)</option>
+                            <option value="20">ATLANTA NRITYA ACADEMY</option>
+                            <option value="21">GRACEFUL DANCERS</option>
+                            <option value="22">NOTORIOUS</option>
+                            <option value="23">SAAYA</option>
+                            <option value="24">PREM DANCE ACADEMY</option>
+                            <option value="25">BLUE FLAME</option>
+                            <option value="26">TRIBE</option>
+                            <option value="27">UNEXPECTED</option>
                         </select>
                         <br/>
-                     <input type="text" className="inputField teamName" name="selectoption" id="selectoption" value={selectTeamName} />
+                     <input type="hidden" className="inputField teamName" name="selectoption" id="selectoption" value={selectTeamName} />
                     </div>
                     <div className="categoryPanel">
                         <div className="row">
