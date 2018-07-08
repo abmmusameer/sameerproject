@@ -2,6 +2,7 @@
   "name": "judgescore",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://danceusadance.us/build/",
   "dependencies": {
     "axios": "^0.18.0",
     "npm": "^6.1.0",
@@ -15,8 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "homepage" : "https://github.com/abmmusameer/sameerproject/tree/master/judgescore",
+    "test": "react-scripts test --env=jsdom",    
     "eject": "react-scripts eject"
   }
 }
