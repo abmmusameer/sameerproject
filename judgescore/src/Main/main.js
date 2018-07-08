@@ -16,6 +16,7 @@ class Main extends Component {
                     <Route path="/Lauren" component={Lauren}/>
                     <Route path="/Matt" component={Matt}/>
                     <Route path="/Nakul" component={Nakul}/>
+                    <Route path="/JudgeScore" component={JudgeScore}/>
                 </Switch>
             </main>
         );

@@ -13,7 +13,8 @@ class Header extends Component {
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/Lauren'>Lauren</Link></li>                
                             <li><Link to='/Matt'>Matt</Link></li>
-                            <li><Link to='/Nakul'>Nakul</Link></li>                                       
+                            <li><Link to='/Nakul'>Nakul</Link></li>
+                            <li><Link to='/JudgeScore'>Table Score</Link></li>                                       
                         </ul>
                     </div>
                 </div>
