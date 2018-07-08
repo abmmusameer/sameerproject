@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 
-import Judgetablescore from '../src/JudgesTableScore/JudgesTableScore';
-import JudgeScore from '../src/JudgeScore/JudgeScore';
+import Header from '../Header/Header';
+import Main from '../Main/main';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-       <Judgetablescore/>
-       <JudgeScore/>
+       <Header/>
+       <Main/>
       </div>
     );
   }

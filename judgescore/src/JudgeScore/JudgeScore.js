@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-class judgeScore extends Component {
+class JudgeScore extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -19,8 +19,7 @@ class judgeScore extends Component {
                         teamId: res.data.teamId             
                      })            
                         .then(res => {                
-                            console.log(res);
-                            
+                            console.log(res);                            
                         })                      
                     this.setState({ persons });               
                     
@@ -37,4 +36,4 @@ class judgeScore extends Component {
     };
 };
 
-export default judgeScore;
+export default JudgeScore;

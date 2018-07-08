@@ -37,8 +37,7 @@ class Judgetablescore extends Component{
 
 
     handleFormSubmit(event) {
-        event.preventDefault();        
-        let judge_name = this.state.judge_name;
+        event.preventDefault();         
         let selectTeam = this.state.selectTeam;
         let technique = this.state.technique;
         let synchronization = this.state.synchronization;
@@ -58,8 +57,7 @@ class Judgetablescore extends Component{
 
         const judgecal = this;
 
-        axios.post('https://danceusadance.us/test/live_voting/saveScore', {
-            judge_name: "judge_name",
+        axios.post('https://danceusadance.us/test/live_voting/saveScore', { 
             selectTeam : selectTeam,
             technique : technique,
             synchronization : synchronization,
@@ -75,7 +73,7 @@ class Judgetablescore extends Component{
         })            
             .then(res => {                
                 console.log(res);
-                judgecal.setState({judge_name: '', selectTeam: '', technique: '', synchronization: '',
+                judgecal.setState({selectTeam: '', technique: '', synchronization: '',
                 execution: '', formations: '', presentation: '', choreography: '', musicinterpretation: '',
                 appearance: '',technicalPres: '', artisticPres:'', totalScore: '',
                 });
