@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+import bgvideo from './judgetbl.mp4';
 import './JudgeScore.css';
 
 class JudgeScore extends Component {
@@ -8,7 +9,7 @@ class JudgeScore extends Component {
         super(props);
         this.state = {
             persons: [],
-            teamId: ''
+            teamId: ''        
         } 
     }
 
@@ -46,7 +47,12 @@ class JudgeScore extends Component {
     render(){ 
         return(
             <div className="judgeScorewrap"> 
-                <ul className="judgeScorepanel">
+                <div className="fullscreenVideo">
+                    <video className='videoTag' autoPlay loop muted >
+                        <source src={bgvideo} type='video/mp4' />
+                    </video>
+                </div>
+                <ul className="judgeScorepanel">                
                     {this.state.persons.map(person => <li key={person.judgeName}>{person.totalScore}</li>)}
                 </ul>          
             </div>

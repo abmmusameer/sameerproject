@@ -97,7 +97,7 @@ class JudgesTableScore extends Component{
         const totalScore = technicalPres + artisticPres;
 
         return(
-            <section className="judgesTablePanel">
+            <section className="judgesTablePanel container">
               <div className="">
                 <form onSubmit={this.handleFormSubmit}>
                     {/* <figure>
