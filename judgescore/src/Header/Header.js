@@ -7,7 +7,7 @@ class Header extends Component {
     render(){
         return(
             <div className="header">
-                <div className="container">                    
+                <div className="">                    
                     <div className="menu">
                         <ul>
                             <li><Link to='/'>Home</Link></li>

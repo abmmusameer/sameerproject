@@ -1,26 +1,46 @@
-.judgesTablePanel { background: #fff; font-size: 16px}
-.inputField {     border: 1px solid #ccc;
-    border-radius: 2px;
+.judgesTablePanel {font-size: 16px}
+.inputField {    border: 1px solid #b5303f; 
     font-size: 14px;
-    padding: 6px 10px;
-    color: #6f6f6f;}
+    padding: 8px 13px;
+    color: #6f6f6f;
+    background: rgba(16, 16, 16, 0.4);
+    /* box-shadow: 0px 2px 20px #ad3030; */
+    color: #fff; transition: .5s ease all}
+    .inputField:focus {outline: 0;
+        border-color: #c72626;
+        box-shadow: 0px 0px 20px #e02626;
+    }
+    
+    
 
 .btnGroup { text-align: center}
-.submitBtn {    background: #ff0052;
+.submitBtn {    background: #e80d27;
     padding: 11px 21px;
     text-align: center;
     border: 0;
     color: #fff;
     border-radius: 4px;
     font-size: 14px; cursor: pointer;}
+    
 
-.maincategoryCalc, .totalCalc { text-align: center; font-size: 18px; margin-bottom: 30px}
+.maincategoryCalc, .totalCalc { text-align: center; font-size: 18px; margin-bottom: 20px}
 
-.categoryPanel .row { margin: 25px 0 35px; display: inline-block}
+.categoryPanel .row { margin: 5px 0 25px; display: inline-block}
 .categoryList li { width: 25%; display: inline-block}
-.categoryList li label { line-height: 30px}
+.categoryList li label { line-height: 37px;
+    color: #fdb8bc;}
 
 .totalScoreField { text-align: center;}
 .teamSelect { text-align: center;}
 select.inputField { margin-bottom: 6px; }
 .teamName.inputField { font-size: 25px; border: 0; text-align: center}
+.col-4 {border-radius: 100%;
+    width: 49px;
+    height: 49px;
+    margin: 0 auto;
+    background: rgba(181, 1, 24, 0.54);
+    /* padding: 10px; */
+    line-height: 48px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 25px;}

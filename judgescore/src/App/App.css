@@ -1,7 +1,63 @@
+@font-face {
+    font-family: 'fenwickoutline';
+    src: url('fonts/fenwick_outline-webfont.woff2') format('woff2'),
+         url('fonts/fenwick_outline-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 * { margin: 0; padding: 0;}
 *:focus { outline: 0}
-body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #fff; }
 ul { list-style: none}
 
-.container { width: 100%; max-width: 910px; margin: 0 auto; }
+input::-webkit-input-placeholder {
+  color: rgb(255, 226, 226) !important;
+  }
+   
+  input:-moz-placeholder { /* Firefox 18- */
+  color: rgb(255, 226, 226) !important;
+  }
+   
+  input::-moz-placeholder {  /* Firefox 19+ */
+  color: rgb(255, 226, 226) !important;
+  }
+   
+  input:-ms-input-placeholder {  
+  color: rgb(255, 226, 226) !important;
+  }
+
+.bodyPanel { margin:0 25px; padding-top:35px}
+.container { width: 100%; max-width: 1000px; margin: 0 auto; background: url(images/back.jpg) no-repeat 0;
+background-size: cover; height: 100vh; position: relative;}
+/* .container::before {content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+  opacity: .6;} */
+
+.loader:empty {
+  position: absolute;
+  top: calc(50% - 4em);
+  left: calc(50% - 4em);
+  width: 6em;
+  height: 6em;
+  border: 1.1em solid rgba(0, 0, 0, 0.2);
+  border-left: 1.1em solid #000000;
+  border-radius: 50%;
+  animation: load8 1.1s infinite linear;
+}
+
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 

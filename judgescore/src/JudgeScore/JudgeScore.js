@@ -14,7 +14,7 @@ class JudgeScore extends Component {
 
     componentDidMount() {
         this.loadData();
-setInterval(() => window.location.reload(),10000); 
+        //setInterval(() => window.location.reload(),30000); 
         // setInterval(this.loadData(),1000);
     }
     async loadData() {
