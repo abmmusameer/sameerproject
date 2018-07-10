@@ -4,7 +4,7 @@
     
     color: #07ddff;
     font-family: 'fenwickoutline';
-    text-shadow: 0px 0px 30px #004a67, 0px 0px 30px #07baff;
+    text-shadow: 0px 5px 5px rgba(0,0,0,0.1), 10px 20px 15px rgba(0,0,0,0.08), -10px 10px 5px rgba(0, 0, 0, 0.12);
     width: 33.33%;
     line-height: 439px;}
 .judgeScorewrap { text-align: center; padding: 100px 0}

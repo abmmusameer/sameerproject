@@ -140,60 +140,60 @@ class JudgesTableScore extends Component{
                      <input type="hidden" className="inputField teamName" name="selectoption" id="selectoption" value={selectTeamName} />
                     </div>
                     <div className="categoryPanel">
-                        <div className="row">
-                        <div className="maincategoryCalc">
-                            <div className="col-8">Technical Presentation</div>
-                            <div className="col-4">
-                                {technicalPres}
+                        <div className="row wid-50">
+                            <div className="maincategoryCalc">
+                                <div className="col-8">Technical Presentation</div>
+                                <div className="col-4">
+                                    {technicalPres}
+                                </div>
                             </div>
-                        </div>
-                                <ul className="categoryList">
-                                    <li>
-                                        <label>
-                                            Technique
-                                            <input type="text" className="inputField" name="technique" id="technique"
-                                            placeholder="0" value={this.state.technique}
+                            <ul className="categoryList">
+                                <li>
+                                    <label>
+                                        Technique
+                                        <input type="text" className="inputField" name="technique" id="technique"
+                                        placeholder="0" value={this.state.technique}
+                                        onChange={this.handleChange}
+                                        />  
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        Synchronization
+                                        <input type="text" className="inputField" name="synchronization" id="synchronization" 
+                                        placeholder="0" value={this.state.synchronization}
+                                        onChange={this.handleChange}                                        
+                                        />
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        Execution
+                                        <input type="text" className="inputField" name="execution" id="execution"
+                                            placeholder="0" value={this.state.execution}
                                             onChange={this.handleChange}
-                                            />  
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            Synchronization
-                                            <input type="text" className="inputField" name="synchronization" id="synchronization" 
-                                            placeholder="0" value={this.state.synchronization}
-                                            onChange={this.handleChange}                                        
-                                            />
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            Execution
-                                            <input type="text" className="inputField" name="execution" id="execution"
-                                                placeholder="0" value={this.state.execution}
-                                                onChange={this.handleChange}
-                                            />
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            Formations
-                                            <input type="text" className="inputField" name="formations" id="formations"
-                                                placeholder="0" value={this.state.formations}
-                                                onChange={this.handleChange}
-                                            />
-                                        </label>
-                                    </li>
-                                </ul>
+                                        />
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        Formations
+                                        <input type="text" className="inputField" name="formations" id="formations"
+                                            placeholder="0" value={this.state.formations}
+                                            onChange={this.handleChange}
+                                        />
+                                    </label>
+                                </li>
+                            </ul>
                         </div>
 
-                        <div className="row">
-                        <div className="maincategoryCalc">
-                            <div className="col-8">Artistic Presentation</div>
-                            <div className="col-4">                        
-                                {artisticPres}
+                        <div className="row wid-50">
+                            <div className="maincategoryCalc">
+                                <div className="col-8">Artistic Presentation</div>
+                                <div className="col-4">                        
+                                    {artisticPres}
+                                </div>
                             </div>
-                        </div>
                             <ul className="categoryList">
                                 <li>
                                     <label>

@@ -28,9 +28,9 @@ input::-webkit-input-placeholder {
   color: rgb(255, 226, 226) !important;
   }
 
-.bodyPanel { margin:0 25px; height: 100vh;}
+.bodyPanel { margin:0; height: 100vh;}
 .container { width: 100%; max-width: 1000px; margin: 0 auto; background: url(images/dudbg.jpg) no-repeat 0;
-background-size: cover; height: 100vh; position: relative; padding: 25px 25px 0}
+background-size: cover; height: 100vh; position: relative; padding: 25px 0px 0}
 .loader:empty {
   position: absolute;
   top: calc(50% - 4em);

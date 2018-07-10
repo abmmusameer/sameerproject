@@ -5,7 +5,7 @@
     color: #6f6f6f;
     background: rgba(16, 16, 16, 0.4);
     /* box-shadow: 0px 2px 20px #ad3030; */
-    color: #fff; transition: .5s ease all}
+    color: #fff; transition: .5s ease all; float: right; width: 50px;}
     .inputField:focus {outline: 0;
         border-color: #c72626;
         box-shadow: 0px 0px 20px #e02626;
@@ -23,16 +23,18 @@
     font-size: 14px; cursor: pointer;}
     
 
-.maincategoryCalc, .totalCalc { text-align: center; font-size: 18px; margin-bottom: 20px}
+.maincategoryCalc, .totalCalc { text-align: center; font-size: 18px; margin-bottom: 60px}
+.totalCalc { margin-bottom: 30px}
 
-.categoryPanel .row { margin: 5px 0 25px; display: inline-block}
-.categoryList li { width: 25%; display: inline-block}
+.categoryPanel {margin: 25px 0; text-align: center}
+.categoryPanel .row { margin: 5px 45px 25px; display: inline-block; text-align: left}
+.categoryList li { width: 100%; display: inline-block;     margin-bottom: 10px;}
 .categoryList li label { line-height: 37px;
     color: #fdb8bc;}
 
 .totalScoreField { text-align: center;}
 .teamSelect { text-align: center;}
-select.inputField { margin-bottom: 6px; }
+select.inputField { margin-bottom: 6px; float: none; width: auto}
 .teamName.inputField { font-size: 25px; border: 0; text-align: center}
 .col-4 {border-radius: 100%;
     width: 49px;
@@ -44,3 +46,5 @@ select.inputField { margin-bottom: 6px; }
     margin-top: 10px;
     font-weight: 600;
     font-size: 25px;}
+
+.wid-50 { width: 38%}
