@@ -12,11 +12,11 @@ class Main extends Component {
             <div className="bodyPanel">
                 <main>
                     <Switch>
-                        <Route exact path="/" component={Judgetablescore}/> 
-                        <Route path="/Lauren" component={Lauren}/>
-                        <Route path="/Matt" component={Matt}/>
-                        <Route path="/Nakul" component={Nakul}/>
-                        <Route path="/JudgeScore" component={JudgeScore}/>
+                        <Route exact path="/build/" component={Judgetablescore}/> 
+                        <Route path="/build/Lauren" component={Lauren}/>
+                        <Route path="/build/Matt" component={Matt}/>
+                        <Route path="/build/Nakul" component={Nakul}/>
+                        <Route path="/build/JudgeScore" component={JudgeScore}/>
                     </Switch>
                 </main>
             </div>

@@ -99,10 +99,7 @@ class JudgesTableScore extends Component{
         return(
             <section className="judgesTablePanel container">
               <div className="">
-                <form onSubmit={this.handleFormSubmit}>
-                    {/* <figure>
-                        <div>Lauren</div>
-                    </figure>  */}
+                <form onSubmit={this.handleFormSubmit}>                     
                     <div className="teamSelect">                    
                         <select
                             className="inputField"
