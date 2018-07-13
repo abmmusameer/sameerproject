@@ -22,7 +22,7 @@ class JudgeScore extends Component {
    }
    async loadData() {
        try { 
-           const res = await fetch('https://danceusadance.us/test/live_voting/getScore');
+           const res = await fetch('https://danceusadance.us/live_voting/getScore');
  //          const res = await fetch('http://localhost/projects/dud/site/live-voting/live_voting/getScore');
            const responseData = await res.json();
            const persons = responseData.score;
@@ -30,7 +30,7 @@ class JudgeScore extends Component {
             if(responseData.status === 1){
 //                 console.log(responseData.team_name)
                        if(persons.length === 3){ console.log(persons.length,persons);
-                            axios.post('https://danceusadance.us/test/live_voting/showOnTableScreen', {
+                            axios.post('https://danceusadance.us/live_voting/showOnTableScreen', {
    //                        axios.post('http://localhost/projects/dud/site/live-voting/showOnTableScreen', {
                                teamId: responseData.team_name             
                             }).then(res => {                
