@@ -59,7 +59,7 @@ class JudgesTableScore extends Component{
 
         const judgecal = this;
 
-        axios.post('https://danceusadance.us/test/live_voting/saveScore', {
+        axios.post('https://danceusadance.us/live_voting/saveScore', {
             judgeName : judgeName,
             selectTeam : selectTeam,
             technique : technique,
